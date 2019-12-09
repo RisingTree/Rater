@@ -1,0 +1,25 @@
+#bottomwrapper{
+    height: 550px;
+    width: 900px;
+    margin: 0px auto;
+    border: 5px solid black;
+    display: flex;
+    overflow:scroll;
+}
+
+img{
+    max-width: 400px;
+    max-height: 450px;
+}
+
+#wrapperleft{
+    width: 50%;
+    height: 80%;
+}
+#wrapperright {
+    padding-top: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+}

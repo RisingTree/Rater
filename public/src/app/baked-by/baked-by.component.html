@@ -1,0 +1,12 @@
+<div id="bottomwrapper">
+    <div id="wrapperleft">
+        <h1>Baked By {{bakedby.baker}}</h1>
+        <img [src]="bakedby.image" alt="">
+    </div>
+    <div id="wrapperright">
+        <h2>Average Rating: {{thisavg}} stars</h2>
+        <p *ngFor="let rating of bakedby.rates">
+        "{{rating.comment}}"<br>{{rating.stars}} stars.<br> <br></p>
+        
+    </div>
+</div>

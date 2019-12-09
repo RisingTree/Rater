@@ -1,0 +1,42 @@
+#wrapper{
+    margin: 0px auto;
+    height: 550px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cakeform{
+    height: 400px;
+    width: 400px;
+    display: inline-block;
+}
+
+.smallimg{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#giverate {
+    display: inline-block;
+    vertical-align: top;
+    height: 400px;
+    width: 400px;
+    overflow: scroll;
+}
+
+.rateall {
+    height: 250px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.rateimg {
+    max-height: 175px;
+    max-width: 175px;
+}
+
+.rateit {
+    height: 175px;
+    width: 150px;
+}

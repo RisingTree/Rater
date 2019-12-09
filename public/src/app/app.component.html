@@ -1,0 +1,37 @@
+<h1 style="text-align:center">Rate My Cakes</h1>
+<div id="wrapper">
+  <div id="cakeform">
+    <h3>Submit a cake to be rated</h3>
+      <form (submit)="addCake(newCake.baker, newCake.image)">
+        Baker Name:<br>
+        <input type="text" name="baker" [(ngModel)]="newCake.baker">
+        <br>Image URL:<br>
+        <input type="text" name="url" [(ngModel)]="newCake.image"><br>
+        <input type="submit" style="position:relative; margin-left: 100px; margin-top: 10px;" value="Submit Cake">
+      </form>
+  </div>
+  <div id="giverate">
+    <div class="rateall" *ngFor="let cake of cakes.data; let i = index">
+      <img (click)="showCake(cake)" class="smallimg rateimg" [src]="cake.image">
+      <div class="rateit">
+        <form (submit)="addRate(cake, newRate[i])">
+          <!-- <b *ngIf="stars.errors">Stars Required</b><br> -->
+          {{newRate[i].stars}}
+          {{newRate[i].comment}}
+          <select name="stars" required minlength="1" [(ngModel)]="newRate[i].stars" #stars="ngModel">
+            <option value="5" id="5">5 stars</option>
+            <option value="4">4 stars</option>
+            <option value="3">3 stars</option>
+            <option value="2">2 stars</option>
+            <option value="1">1 stars</option>
+          </select>
+          <br>Comment:<br>
+          <textarea name="comment" [(ngModel)]="newRate[i].comment" #comment="ngModel" cols="20" rows="8"></textarea>
+          <input type="submit" style="position:relative; margin-left: 120px;" value="Rate">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-baked-by *ngIf="oneCake.baker" [bakedby]="oneCake" [thisavg]="avg"></app-baked-by>
+<router-outlet></router-outlet>
